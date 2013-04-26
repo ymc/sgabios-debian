@@ -1,0 +1,19 @@
+Source: sgabios
+Section: misc
+Priority: extra
+Maintainer: Daniel Beyer <dabe@deb.ymc.ch>
+Homepage: https://code.google.com/p/sgabios/
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.9.1
+
+Package: sgabios
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: qemu-kvm
+Description: bios option rom to provide legacy serial console for x86
+ The Google Serial Graphics Adapter BIOS or SGABIOS provides a means for
+ legacy x86 software to communicate with an attached serial console as if
+ a video card were attached. SGABIOS is designed to be inserted into a BIOS
+ as an option rom to provide over a serial port the display and input
+ capabilities normally handled by a VGA adapter and a keyboard. SGABIOS
+ can be used to feature OS independent serial console redirection in Qemu.

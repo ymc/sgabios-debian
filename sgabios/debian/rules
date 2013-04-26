@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+%:
+	+dh $@
+
+override_dh_auto_clean:
+	make clean
+	set -e; \
+	 rm -f .depend
+
+override_dh_auto_configure override_dh_auto_test:
+# nothing to do
+
+override_dh_auto_install:
+	set -e; \
+	 chmod 644 sgabios.bin;

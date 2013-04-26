@@ -1,0 +1,92 @@
+About SGABIOS
+=============
+The Google Serial Graphics Adapter BIOS or SGABIOS provides a means for legacy
+x86 software to communicate with an attached serial console as if a video card
+were attached.
+SGABIOS is designed to be inserted into a BIOS as an option rom to provide
+over a serial port the display and input capabilities normally handled by a
+VGA adapter and a keyboard, and additionally provide hooks for logging
+displayed characters for later collection after an operating system boots.
+It is designed to handle all text mode output sent to the legacy video bios
+int 10h service routine. Int 10h is the most common method for displaying
+characters in 16-bit legacy x86 code.
+Detailed design information can be found in the file design.txt.
+
+
+
+Why use SGABIOS with qemu-kvm
+=============================
+Using SGABIOS with qemu-kvm allows you to interact with the BIOS (e.g. for
+selecting a boot-device) and option roms (e.g. to access the gPXE console)
+using a serial console device, which can be redirected on the host system
+in various ways. On possibility is provide input/output to the redirected
+serial device on the host system via telnet, allowing easy remote access to
+the virtual server without using VNC. For other ways how to redirect the
+serial device on the host system, please take a look into the man page of
+qemu-doc (section 1) and search for option "-serial" in it.
+
+
+
+Using SGABIOS together with qemu-kvm
+====================================
+
+Standalone SGABIOS
+------------------
+It is possible to use SGABIOS with no other graphic adapter installed. In
+order to do so, start qemu-kvm with the following additional options:
+  -vga none -display none -device sga
+Output will be send solely to the serial device in this case.
+
+
+Hybrid SGABIOS and VGA graphic adapter
+--------------------------------------
+Using SGABIOS it is supported to have output on the virtual graphics card
+as well as on the serial device. To achieve this, start qemu-kvm with the
+following two additional options:
+  -vga cirrus -device sga
+Output will be send to virtual graphics card and the serial device.
+
+
+
+Limitations of SGABIOS
+======================
+SGABIOS will always use the first serial device configured in qemu-kvm using
+the option "-serial". By default qemu-kvm (as of version 1.1.2) configures
+a first serial device of type "vc" in graphical mode and "stdio" in non
+graphical mode, as long as neither option "-nodefaults" nor a option "-serial"
+is provided. Therefor it is strongly recommended to always provide a option
+"-serial (...)" together with "-device sga".
+
+
+
+Examples
+========
+
+Use VNC to access the graphical output and telnet to access serial output
+-------------------------------------------------------------------------
+
+1) Start qemu-kvm:
+# kvm  -boot menu=on -vga cirrus -vnc localhost:1 -device sga -serial telnet:localhost:4444,server
+
+2) Connect via telnet:
+# telnet localhost 4444
+
+3) Connect via VNC:
+# vncviewer localhost:1
+
+
+Only provide serial access using telnet by multiplexing the qemu-monitor
+------------------------------------------------------------------------
+
+1) Start qemu-kvm:
+# kvm -boot menu=on -vga none -display none -device sga -serial mon:telnet:localhost:4444,server
+
+2) Connect via netcat:
+# telnet localhost 4444
+
+3) Toggle between serial console and qemu-monitor:
+Press '<ctrl>' and 'a' together, followed by a press of 'c'.
+
+
+
+
