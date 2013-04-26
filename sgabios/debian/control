@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: Daniel Beyer <dabe@deb.ymc.ch>
 Homepage: https://code.google.com/p/sgabios/
 Build-Depends: debhelper (>= 7)
-Standards-Version: 3.9.1
+Standards-Version: 3.9.4
 
 Package: sgabios
 Architecture: all
