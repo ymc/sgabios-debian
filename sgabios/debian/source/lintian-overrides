@@ -1,0 +1,3 @@
+# Upstream did not do a release of sgabios, yet. Therefore there is
+# nothing we possibly can watch.
+sgabios source: debian-watch-file-is-missing
