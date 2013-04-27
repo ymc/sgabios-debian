@@ -1,5 +1,5 @@
-sgabios (0:2010.04.22-1) unstable; urgency=low
+sgabios (0.0~svn8-1) unstable; urgency=low
 
   * Initial Release. (Closes: #706204)
 
- -- Daniel Beyer <dabe@deb.ymc.ch>  Fri, 26 Apr 2013 16:15:21 +0200
+ -- Daniel Beyer <dabe@deb.ymc.ch>  Sat, 27 Apr 2013 09:32:39 +0200
