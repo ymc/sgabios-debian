@@ -108,3 +108,4 @@ c) Toggle between serial console and qemu-monitor:
 Press '<ctrl>' and 'a' together, followed by a press of 'c'.
 
 
+ -- Daniel Beyer <dabe@deb.ymc.ch>  Sat, 27 Apr 2013 17:18:12 +0200
