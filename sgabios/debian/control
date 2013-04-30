@@ -9,7 +9,6 @@ Standards-Version: 3.9.4
 Package: sgabios
 Architecture: all
 Depends: ${misc:Depends}
-Suggests: qemu-kvm
 Description: bios option rom to provide legacy serial console for x86
  The Google Serial Graphics Adapter BIOS or SGABIOS provides a means for
  legacy x86 software to communicate with an attached serial console as if
