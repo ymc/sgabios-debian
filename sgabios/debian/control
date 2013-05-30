@@ -5,6 +5,9 @@ Maintainer: Daniel Beyer <dabe@deb.ymc.ch>
 Homepage: https://code.google.com/p/sgabios/
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.4
+Vcs-Browser: https://github.com/ymc/sgabios-debian
+Vcs-Git: git://github.com/ymc/sgabios-debian.git
+
 
 Package: sgabios
 Architecture: all
