@@ -30,32 +30,33 @@ not provided by the vendor of our hardware.
 
 2.2) Using SGABIOS on emulated X86 hardware
 ===========================================
-If serial BIOS redirection is needed, it's recommended to use SGABIOS together
-with qemu-kvm (v1.1) for x86 based emulated hardware, since SeaBIOS is used by
-qemu-kvm for x86 based emulated hardware and qemu-kvm features support for
-addressing the SGABIOS option rom at the right stage during startup. Other
-emulators for virtual machines might support SGABIOS as well, but are not
-covered by this README.
+For serial BIOS redirection with emulated X86 hardware, SGABIOS can be used
+together with qemu, since SeaBIOS is used by qemu for x86 based emulated
+hardware and SeaBIOS features support for addressing the SGABIOS option rom
+at the right stage during startup. Other emulators for virtual machines might
+support SGABIOS as well, but are not covered by this README.
 
 
-3) SGABIOS with qemu-kvm
-========================
-Since I/O of the virtual server driven by gemu-kvm is provided through a serial
-device, it is possible with qemu-kvm to redirect this on the host system in
+3) SGABIOS with qemu
+====================
+Since I/O of the virtual server driven by gemu is provided through a serial
+device, it is possible with qemu to redirect this on the host system in
 various ways. On possibility is to the redirect it on the host system using
 telnet, allowing easy remote access to the virtual server without using VNC.
 For other ways how to redirect the serial device on the host system, please
-take a look into the man page of qemu-doc(1) and search for option "-serial"
+take a look into the man page of qemu(1) and search for option "-serial"
 in it.
 
 
-3.1) Using SGABIOS together with qemu-kvm
-==========================================
+3.1) Using SGABIOS together with qemu
+=====================================
+Note that you need qemu to emulate X86 hardware for SGABIOS. In Debian you
+therefore need to install the package qemu-system-x86.
 
 3.1.1) Standalone SGABIOS
 -------------------------
 It is possible to use SGABIOS with no other graphic adapter installed. In
-order to do so, start qemu-kvm with the following additional options:
+order to do so, start qemu with the following additional options:
   -vga none -display none -device sga
 Output will be send solely to the serial device in this case.
 
@@ -63,30 +64,33 @@ Output will be send solely to the serial device in this case.
 3.1.1.2) Hybrid SGABIOS and VGA graphic adapter
 -----------------------------------------------
 Using SGABIOS it is supported to have output on the virtual graphics card
-as well as on the serial device. To achieve this, start qemu-kvm with the
+as well as on the serial device. To achieve this, start qemu with the
 following two additional options:
   -vga cirrus -device sga
 Output will be send to virtual graphics card and the serial device.
 
 
-3.2) Limitations of SGABIOS with qemu-kvm
-=========================================
-SGABIOS will always use the first serial device configured in qemu-kvm using
-the option "-serial". By default qemu-kvm (as of version 1.1) configures
-a first serial device of type "vc" in graphical mode and "stdio" in non
-graphical mode, as long as neither option "-nodefaults" nor a option "-serial"
-is provided. Therefor it is strongly recommended to always provide a option
-"-serial (...)" together with "-device sga".
+3.2) Limitations of SGABIOS with qemu
+=====================================
+SGABIOS will always use the first serial device configured in qemu using
+the option "-serial". By default qemu configures a first serial device of
+type "vc" in graphical mode and "stdio" in non graphical mode, as long as
+neither option "-nodefaults" nor a option "-serial" is provided. Therefor
+it is strongly recommended to always provide a option "-serial (...)"
+together with "-device sga".
 
 
-3.3) Examples how to use SGABIOS together with qemu-kvm
-=======================================================
+3.3) Examples how to use SGABIOS together with qemu
+===================================================
+The commands and qemu-system-i386 and qemu-system-x86_64 mentioned in the
+examples below can be found in the Debian package qemu-system-x86.
 
 3.3.1 ) Use VNC to access the graphical and telnet to access the serial output
 ------------------------------------------------------------------------------
 
-a) Start qemu-kvm:
-# kvm  -boot menu=on -vga cirrus -vnc localhost:1 -device sga -serial telnet:localhost:4444,server
+a) Start qemu (you can use either use qemu-system-i386 or qemu-system-x86_64):
+# qemu-system-x86_64 -boot menu=on -vga cirrus -vnc localhost:1 \
+                     -device sga -serial telnet:localhost:4444,server
 
 b) Connect via telnet:
 # telnet localhost 4444
@@ -98,8 +102,9 @@ c) Connect via VNC:
 3.3.2 ) Only provide serial access via telnet by multiplexing the qemu-monitor
 ------------------------------------------------------------------------------
 
-a) Start qemu-kvm:
-# kvm -boot menu=on -vga none -display none -device sga -serial mon:telnet:localhost:4444,server
+a) Start qemu (you can use either use qemu-system-i386 or qemu-system-x86_64):
+# qemu-system-x86_64 -boot menu=on -vga none -display none \
+                     -device sga -serial mon:telnet:localhost:4444,server
 
 b) Connect via netcat:
 # telnet localhost 4444
