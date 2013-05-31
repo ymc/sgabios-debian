@@ -1,5 +1,5 @@
 Source: sgabios
-Section: misc
+Section: otherosfs
 Priority: optional
 Maintainer: Daniel Beyer <dabe@deb.ymc.ch>
 Homepage: https://code.google.com/p/sgabios/
