@@ -21,14 +21,14 @@ normally featured by a VGA graphics card and the input capabilities normally
 handled by a keyboard. This is useful for selecting a boot-device during
 startup or to access feature provided by option roms (e.g. accessing a gPXE
 console). Further details can be found
-* in the file [README.Debian](https://github.com/ymc/sgabios-debian/blob/master/sgabios/debian/README.Debian)
-* in the file [design.txt](https://github.com/ymc/sgabios-debian/blob/master/sgabios/design.txt)
+* in the file [README.Debian](sgabios/debian/README.Debian)
+* in the file [design.txt](sgabios/design.txt)
 * online at https://code.google.com/p/sgabios/
 
 
 Legal
 -----
-* SGABIOS is Licensed under the Apache License, Version 2.0 - see [sgabios/COPYING](https://github.com/ymc/sgabios-debian/blob/master/sgabios/COPYING)
+* SGABIOS is Licensed under the Apache License, Version 2.0 - see [sgabios/COPYING](sgabios/COPYING)
 * The Debian packaging is released [GNU General Public License (GPL) 3.0](http://www.gnu.org/licenses/gpl-3.0.txt)
 
 ANY CONTENT IN THIS REPOSITORY IS PROVIDED "AS IS" AND THE AUTHORS DISCLAIMS
