@@ -1,3 +1,9 @@
+sgabios (0.0~svn8-2) unstable; urgency=low
+
+  * Added build dependency on gcc-multilib. (Closes: #718142)
+
+ -- Daniel Beyer <dabe@deb.ymc.ch>  Sun, 28 Jul 2013 12:08:57 +0200
+
 sgabios (0.0~svn8-1) unstable; urgency=low
 
   * Initial Release. (Closes: #706204)
