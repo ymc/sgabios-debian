@@ -13,6 +13,7 @@ Vcs-Git: git://github.com/ymc/sgabios-debian.git
 Package: sgabios
 Architecture: all
 Depends: ${misc:Depends}
+Replaces: qemu-system-x86 (<= 1.5.0+dfsg-5)
 Description: bios option rom to provide legacy serial console for x86
  The Google Serial Graphics Adapter BIOS or SGABIOS provides a means for
  legacy x86 software to communicate with an attached serial console as if
