@@ -1,6 +1,6 @@
 sgabios (0.0~svn8-2) unstable; urgency=low
 
-  * Added build dependency on gcc-multilib. (Closes: #718142)
+  * Added build dependency on gcc-multilib [amd64]. (Closes: #718142)
   * Added a symlink /usr/share/qemu/sgabios.bin pointing to the sgabios x86
     bios option rom. This link was provided by qemu-system-x86 but has been
     removed after 1.5.0+dfsg-5 to prevent a possibly dangling symlink.
