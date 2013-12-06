@@ -1,6 +1,7 @@
 sgabios (0.0~svn8-3) unstable; urgency=low
 
   * Made sgabios multiarch aware (Closes: #731490)
+  * Set Standards-Version to 3.9.5 (no changes needed)
 
  -- Daniel Beyer <dabe@deb.ymc.ch>  Fri, 06 Dec 2013 09:25:03 +0100
 
