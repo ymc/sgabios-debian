@@ -1,3 +1,9 @@
+sgabios (0.0~svn8-3) unstable; urgency=low
+
+  * Made sgabios multiarch aware (Closes: #731490)
+
+ -- Daniel Beyer <dabe@deb.ymc.ch>  Fri, 06 Dec 2013 09:25:03 +0100
+
 sgabios (0.0~svn8-2) unstable; urgency=low
 
   * Added build dependency on gcc-multilib [amd64]. (Closes: #718142)
