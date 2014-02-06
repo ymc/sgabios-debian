@@ -1,8 +1,11 @@
-sgabios (0.0~svn8-3~bpo70+1) wheezy-backports; urgency=low
+sgabios (0.0~svn8-3~bpo70+2) wheezy-backports; urgency=low
 
   * Rebuild for wheezy-backports.
+  * Added a symlink /usr/share/kvm/sgabios.bin pointing to the sgabios x86
+    bios option rom, allowing qemu-kvm in wheezy to optionally make use
+    of sgabios.
 
- -- Matt Taggart <taggart@debian.org>  Thu, 06 Feb 2014 01:01:07 -0800
+ -- Daniel Beyer <dabe@deb.ymc.ch>  Thu, 06 Feb 2014 18:48:18 +0100
 
 sgabios (0.0~svn8-3) unstable; urgency=low
 
