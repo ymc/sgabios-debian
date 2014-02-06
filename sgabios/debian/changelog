@@ -1,3 +1,9 @@
+sgabios (0.0~svn8-3~bpo70+1) wheezy-backports; urgency=low
+
+  * Rebuild for wheezy-backports.
+
+ -- Matt Taggart <taggart@debian.org>  Thu, 06 Feb 2014 01:01:07 -0800
+
 sgabios (0.0~svn8-3) unstable; urgency=low
 
   * Made sgabios multiarch aware (Closes: #731490)
