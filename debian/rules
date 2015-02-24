@@ -1,11 +1,23 @@
 #!/usr/bin/make -f
 
+BUILD_HOST = debian
+BUILD_USER = debian
+BUILD_DATE = $(shell dpkg-parsechangelog --show-field=Date)
+BUILD_SHORT_DATE = $(shell date --date="$(BUILD_DATE)" +%D)
+
 %:
 	+dh $@
 
 override_dh_auto_clean:
 	make clean
 	rm -f .depend
+
+override_dh_auto_build:
+	make \
+		BUILD_HOST="\\\"$(BUILD_HOST)\\\"" \
+		BUILD_USER="\\\"$(BUILD_USER)\\\"" \
+		BUILD_DATE="\\\"$(BUILD_DATE)\\\"" \
+		BUILD_SHORT_DATE="\\\"$(BUILD_SHORT_DATE)\\\""
 
 override_dh_auto_configure override_dh_auto_test:
 # nothing to do
