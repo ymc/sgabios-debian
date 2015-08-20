@@ -39,11 +39,11 @@ support SGABIOS as well, but are not covered by this README.
 
 3) SGABIOS with qemu
 ====================
-Since I/O of the virtual server driven by gemu is provided through a serial
+Since I/O of the virtual server driven by qemu is provided through a serial
 device, it is possible with qemu to redirect this on the host system in
-various ways. On possibility is to the redirect it on the host system using
+various ways. One possibility is to the redirect it on the host system using
 telnet, allowing easy remote access to the virtual server without using VNC.
-For other ways how to redirect the serial device on the host system, please
+For other ways to redirect the serial device on the host system, please
 take a look into the man page of qemu(1) and search for option "-serial"
 in it.
 
