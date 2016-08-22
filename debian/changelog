@@ -1,3 +1,15 @@
+sgabios (0.0~svn8-4~1.gbpfbeaaa) UNRELEASED; urgency=medium
+
+  ** SNAPSHOT build @fbeaaa8692c8df9eeb69fe7d3d07c3c3438bcb27 **
+
+  [ Marques Johansson ]
+  * Update README.Debian
+
+  [ Daniel Beyer ]
+  * Use git-buildpackage for the Debian packaging
+
+ -- Daniel Beyer <dabe@deb.ymc.ch>  Mon, 22 Aug 2016 15:07:15 +0200
+
 sgabios (0.0~svn8-3) unstable; urgency=low
 
   * Made sgabios multiarch aware (Closes: #731490)
