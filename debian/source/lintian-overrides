@@ -1,3 +1,6 @@
 # Upstream did not do a release of sgabios, yet. Therefore there is
 # nothing we possibly can watch.
 sgabios source: debian-watch-file-is-missing
+# So far upstream did not move the project and the project page itself is
+# still working.
+sgabios source: obsolete-url-in-packaging * https://code.google.com/p/sgabios/
