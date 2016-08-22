@@ -1,14 +1,20 @@
-sgabios (0.0~svn8-4~1.gbpfbeaaa) UNRELEASED; urgency=medium
-
-  ** SNAPSHOT build @fbeaaa8692c8df9eeb69fe7d3d07c3c3438bcb27 **
+sgabios (0.0~svn8-4) unstable; urgency=medium
 
   [ Marques Johansson ]
   * Update README.Debian
 
   [ Daniel Beyer ]
   * Use git-buildpackage for the Debian packaging
+  * Set Standards-Version to 3.9.8 (no changes needed)
+  * Reference secure URIs in debian/* (where possible)
+  * Add lintian override for code.google.com.
+    The current project page on Google Code is still working and
+    upstream did not move the project to another location so far.
 
- -- Daniel Beyer <dabe@deb.ymc.ch>  Mon, 22 Aug 2016 15:07:15 +0200
+  [ Chris Lamb ]
+  * Make build of sgabios reproducible (Closes: #779135)
+
+ -- Daniel Beyer <dabe@deb.ymc.ch>  Mon, 22 Aug 2016 16:28:12 +0200
 
 sgabios (0.0~svn8-3) unstable; urgency=low
 
