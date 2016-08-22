@@ -14,7 +14,7 @@ console). Further details can be found in file design.txt or online at
 ================================
 SGABIOS is a 16bit X86 bios option rom. Therefore it can run only on physical
 or emulated x86 hardware and has to be called from a compatible 16bit X86 BIOS.
-SeaBIOS <http://www.seabios.org/> is a 16bit X86 BIOS known to to work together
+SeaBIOS <http://www.seabios.org/> is a 16bit X86 BIOS known to work together
 with SGABIOS.
 
 
@@ -113,4 +113,4 @@ c) Toggle between serial console and qemu-monitor:
 Press '<ctrl>' and 'a' together, followed by a press of 'c'.
 
 
- -- Daniel Beyer <dabe@deb.ymc.ch>  Sat, 27 Apr 2013 17:18:12 +0200
+ -- Daniel Beyer <dabe@deb.ymc.ch>  Mon, 22 Aug 2016 16:16:03 +0200
