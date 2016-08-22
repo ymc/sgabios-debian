@@ -22,7 +22,7 @@ with SGABIOS.
 ===========================================
 If you plan to equip physical X86 hardware with a SGABIOS enabled SeaBIOS, you
 can do this by using coreboot. Doing this is not scope of this README, but
-instructions how to do this can be found at <http://www.coreboot.org/SeaBIOS>.
+instructions how to do this can be found at <https://www.coreboot.org/SeaBIOS>.
 Please be warned that you can easily fry your physical X86 hardware if you
 flash over our existing BIOS - especially if the new contents of the flash is
 not provided by the vendor of our hardware.

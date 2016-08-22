@@ -7,7 +7,7 @@ Homepage: https://code.google.com/p/sgabios/
 Build-Depends: debhelper (>= 9), gcc-multilib [amd64]
 Standards-Version: 3.9.8
 Vcs-Browser: https://github.com/ymc/sgabios-debian
-Vcs-Git: git://github.com/ymc/sgabios-debian.git
+Vcs-Git: https://github.com/ymc/sgabios-debian.git
 
 
 Package: sgabios
