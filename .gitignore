@@ -1,7 +1,0 @@
-# subversion dirs
-.svn/
-# jedit backup files
-\#*#
-# jedit marker files
-\.*.marks
-
