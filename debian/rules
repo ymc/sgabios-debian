@@ -1,9 +1,9 @@
 #!/usr/bin/make -f
 
-BUILD_HOST = debian
-BUILD_USER = debian
+BUILD_HOST = generic
+BUILD_USER = generic
 BUILD_DATE = $(shell dpkg-parsechangelog --show-field=Date)
-BUILD_SHORT_DATE = $(shell date --date="$(BUILD_DATE)" +%D)
+BUILD_SHORT_DATE = $(shell date --utc --date="$(BUILD_DATE)" +%D)
 
 %:
 	+dh $@
