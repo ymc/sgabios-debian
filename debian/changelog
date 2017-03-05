@@ -14,7 +14,7 @@ sgabios (0.0~svn8-4) unstable; urgency=medium
   [ Chris Lamb ]
   * Make build of sgabios reproducible (Closes: #779135)
 
- -- Daniel Beyer <dabe@deb.ymc.ch>  Mon, 22 Aug 2016 16:28:12 +0200
+ -- Daniel Beyer <dabe@deb.ymc.ch>  Sun, 05 Mar 2017 16:09:17 +0100
 
 sgabios (0.0~svn8-3) unstable; urgency=low
 
